@@ -14,7 +14,16 @@ datasource db {
 }
 
 model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
+  id          Int     @id @default(autoincrement())
+  email       String  @unique
+  name        String?
+  password    String
+  status      Boolean @default(true)
+  extra       Json
+
+  createdAt   Date?
+  updatedAt   Date?
+  deleteAt    Date?
+  userUpdate  String?
+
 }
